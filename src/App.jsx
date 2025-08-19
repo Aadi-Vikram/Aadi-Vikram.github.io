@@ -7,37 +7,46 @@ const profile = {
   title: "Software Engineer • MCDS @ CMU",
   location: "Pittsburgh, PA",
   email: "aadityas@andrew.cmu.edu",
-  photo: "https://via.placeholder.com/150",
+  photo: "/IMG_4471.jpg",
   about:
-    "Hi! I’m Aaditya Vikram, a software engineer passionate about distributed systems, data science, and machine learning. I’ve worked at Cisco and Zscaler and published award-winning research. Currently pursuing my MCDS at Carnegie Mellon University, I love solving hard problems, contributing to open-source, and competing in coding contests.",
+    "Hi, I’m Aaditya Vikram a software engineer and graduate student in the Master of Computational Data Science program at Carnegie Mellon University. I’m fascinated by distributed systems, data science, and machine learning, and I love building things that are both scalable and impactful. During my time at Cisco and Zscaler, I worked on everything from middleware and cloud integrations to secure data pipelines. Outside of work, I’ve published research in computer vision and data analytics, including award winning work on GAN-based image dehazing. I enjoy solving tough problems, whether it’s through coding contests, open-source contributions, or tinkering with new tools and frameworks. At the heart of it, I’m driven by curiosity and the excitement of turning complex ideas into real systems that make a difference.",
   links: {
-    github: "https://github.com/",
+    github: "https://github.com/Aadi-Vikram",
     linkedin: "https://linkedin.com/in/aaditya-vikrams",
   },
 };
 
 const experiences = [
-  {
-    company: "Cisco",
-    role: "Software Development Engineer",
-    period: "Sep 2024 – Jul 2025",
-    logo: "/Cisco.png",
-    bullets: [
-      "Led telemetry & middleware initiative preventing data loss for 10K+ customers; built a Webex bot reducing MTTR by ~40%.",
-      "Resolved 50+ critical bugs; standardized API error schemas across 20+ microservices, improving platform stability by ~35%.",
-    ],
-  },
-  {
-    company: "Zscaler",
-    role: "Software Engineer Intern",
-    period: "Feb 2024 – Aug 2024, Jun 2023 - Aug 2023",
-    logo: "/zscaler.png",
-    bullets: [
-      "Compressed data by ~40% and sped up transfers by ~50% using Protocol Buffers.",
-      "Optimized PostgreSQL with PL/pgSQL; improved analytics throughput and performance.",
-      "Secured RabbitMQ over HTTPS; added pseudo-clustering; automated servers in Python with ~95% unit test coverage.",
-    ],
-  },
+    {
+        company: "Cisco",
+        role: "Software Development Engineer",
+        period: "Sep 2024 – Jul 2025",
+        logo: "/Cisco.png",
+        bullets: [
+          "Led telemetry & middleware initiative in Golang preventing data loss for 10K+ customers; integrated with AWS Athena for reliable data validation.",
+          "Built Webex bots in Node.js to deliver real-time alerts on traffic thresholds and system metrics, reducing MTTR by ~40%.",
+          "Resolved 50+ critical bugs across backend and UI components, improving orchestration reliability.",
+          "Standardized API error schemas across 20+ microservices, enhancing debugging efficiency and service consistency.",
+          "Applied distributed systems and algorithm design principles to improve platform stability and performance by ~35%.",
+          "Collaborated in Agile teams, driving sprint planning, code reviews, and CI/CD pipeline enhancements."
+        ]
+      },
+      {
+        company: "Zscaler",
+        role: "Software Engineer Intern",
+        period: "Feb 2024 – Aug 2024, Jun 2023 - Aug 2023",
+        logo: "/zscaler.png",
+        bullets: [
+          "Compressed data by ~40% and accelerated transfers by ~50% using Protocol Buffers.",
+          "Optimized PostgreSQL with PL/pgSQL, indexes, and query tuning; improved analytics throughput and performance.",
+          "Secured RabbitMQ over HTTPS, implemented pseudo-clustering, and improved queue reliability.",
+          "Developed IOCTLs (I/O control system calls) to strengthen low-level device communication.",
+          "Automated server functions with Python scripts, reducing manual deployment overhead.",
+          "Achieved ~95% unit test coverage with CMocka, ensuring robustness of critical modules.",
+          "Collaborated with cross-functional teams to enhance security, scalability, and system performance."
+        ]
+      }
+,      
   {
     company: "PES University",
     role: "Undergraduate Teaching Assistant, Cloud Computing and Problem Solving with C",
@@ -64,7 +73,7 @@ const experiences = [
 
 const achievements = [
   { title: "Knight on LeetCode (Top 2.75%)", logo: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" },
-  { title: "Best Paper Award – ISMSI 2024", logo: "https://static.wixstatic.com/media/1c3c2f_602b6fdd6d0e48e4a2b83b7a9f9b4621~mv2.png" },
+  { title: "Best Paper Award – ISMSI 2024", logo: "/ismsi.png" },
 ];
 
 const certifications = [
@@ -73,22 +82,51 @@ const certifications = [
 ];
 
 const skills = [
-  { name: "C++", logo: "https://raw.githubusercontent.com/isocpp/logos/master/cpp_logo.png" },
-  { name: "Go", logo: "https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Aqua.png" },
-  { name: "Python", logo: "https://www.python.org/static/community_logos/python-logo.png" },
-  { name: "PostgreSQL", logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" },
-  { name: "React", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" },
-  { name: "TensorFlow", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" },
-  { name: "PyTorch", logo: "https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" },
-];
+    // Programming Languages
+    { name: "C++", logo: "https://raw.githubusercontent.com/isocpp/logos/master/cpp_logo.png" },
+    { name: "Go", logo: "https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Aqua.png" },
+    { name: "Python", logo: "https://www.python.org/static/community_logos/python-logo.png" },
+    { name: "Java", logo: "https://www.vectorlogo.zone/logos/java/java-icon.svg" },
+    { name: "SQL", logo: "https://upload.wikimedia.org/wikipedia/commons/8/87/Sql_data_base_with_logo.png" },
+  
+    // Data Science & ML
+    { name: "PyTorch", logo: "https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" },
+    { name: "TensorFlow", logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" },
+    { name: "Keras", logo: "https://upload.wikimedia.org/wikipedia/commons/a/ae/Keras_logo.svg" },
+    { name: "scikit-learn", logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
+    { name: "pandas", logo: "https://pandas.pydata.org/static/img/pandas_mark.svg" },
+    { name: "NumPy", logo: "https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" },
+    { name: "HuggingFace", logo: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg" },
+
+  
+    // Web Development
+    { name: "HTML5", logo: "https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" },
+    { name: "CSS3", logo: "https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" },
+    { name: "React", logo: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" },
+    { name: "Node.js", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" },
+    { name: "Express.js", logo: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" },
+  
+    // Databases
+    { name: "PostgreSQL", logo: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" },
+    { name: "MongoDB", logo: "https://upload.wikimedia.org/wikipedia/commons/9/93/MongoDB_Logo.svg" },
+  
+    // DevOps & Tools
+    { name: "Git", logo: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Git_icon.svg" },
+    { name: "GitHub", logo: "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" },
+    { name: "Jenkins", logo: "https://www.jenkins.io/images/logos/jenkins/jenkins.png" },
+    { name: "Docker", logo: "https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" },
+    { name: "Kubernetes", logo: "https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" },
+    { name: "Grafana", logo: "https://upload.wikimedia.org/wikipedia/commons/3/3b/Grafana_icon.svg" },
+  ];
+  
 
 const projects = [
-  { name: "GAN‑Based Image Dehazing", img: "/bank_transaction.png", description: "Tiramisu generator + PatchGAN discriminator for multispectral image dehazing." },
-  { name: "Wine Analytics Study", img: "/wine.png", description: "Comparative study of data analysis techniques on wine quality dataset." },
-  { name: "Android Malware Detection Survey", img: "/android_malware.png", description: "Survey paper on Android malware detection methods and approaches." },
-  { name: "Plan Your Miles", img: "/travel.png", description: "A travel based website based on client preference" },
-  { name: "Yet Another Kafka", img: "/kafka.png", description: "A kafka replica using socket programming" },
-  { name: "Secure Bank Transaction", img: "/banker.png", description: "A kafka replica using socket programming" },
+  { name: "GAN‑Based Image Dehazing", img: "/bank_transaction.png", description: "Tiramisu generator + PatchGAN discriminator for multispectral image dehazing.", additional: "This work presents a GAN-based framework for multispectral image dehazing that overcomes the limitations of traditional RGB-focused methods by explicitly addressing wavelength-dependent haze effects across spectral bands. The approach introduces a channel decomposition strategy to process each band individually, a modified Tiramisu generator to capture both fine textures and semantic features through dense connectivity and skip connections, and a PatchGAN discriminator to preserve local structural details. Trained with a combination of adversarial, L1, and perceptual losses, the model achieves sharper, more realistic outputs with fewer artifacts. Experiments on the SHIA dataset show significant improvements over state-of-the-art methods, delivering higher PSNR and SSIM scores as well as visually clearer imagery. By removing haze without relying on explicit transmission map estimation, the framework enables robust multispectral imaging in agriculture, environmental monitoring, defense, and remote sensing, where clarity and spectral fidelity are crucial." },
+  { name: "Wine Analytics Study", img: "/wine.png", description: "Comparative study of data analysis techniques on wine quality dataset.", additional: "This study investigates the use of data analysis and machine learning techniques to enhance wine quality prediction in response to the industry’s rapid growth and rising demand. Various physicochemical attributes, such as acidity, sugar, chlorides, sulfates, density, and alcohol content, were analyzed, followed by feature selection methods like Information Gain and Random Forests to identify the most influential factors. Multiple classification models including Artificial Neural Networks (ANN), Support Vector Machines (SVM), Logistic Regression, Decision Trees, Random Forests, and XGBoost were applied to two tasks: classifying wines as red or white, and as good or poor in quality. Results showed high accuracy for red/white classification, with XGBoost achieving the best performance (99.38%), while Random Forests provided the most reliable outcomes for quality prediction (87.83%), confirming their effectiveness in optimizing automated wine quality assessment."},
+  { name: "Android Malware Detection Survey", img: "/android_malware.png", description: "Survey paper on Android malware detection methods and approaches.", additional: "The rapid growth of smartphones, particularly Android with its dominant global market share of around 87%, has made mobile devices central to daily life but also highly vulnerable to malware due to the platform’s open-source nature, flexible architecture, and permission management. As malware attacks, especially Trojans, have surged reaching nearly half a million new variants monthly researchers have focused on developing detection and defense methods. This literature survey reviews over 90 studies since 2010, analyzing approaches such as machine learning, code and structural similarity, static and dynamic analysis, app store vulnerability detection, and IoT focused methods. Findings show that machine learning dominates as the most effective strategy for Android malware detection, though challenges remain regarding dataset quality, algorithm selection, and resource efficiency, highlighting ongoing research needs in this critical security domain." },
+  { name: "Plan Your Miles", img: "/travel.png", description: "A travel based website based on client preference", additional: "Collaborated in a 4-member team to develop Plan Your Miles, a full-stack web application built with the MERN stack (MongoDB, Express.js, React, Node.js) that leveraged database management, data analytics, and emotional sentiment analysis to deliver personalized vacation planning. I contributed to designing and implementing user profiling and personalization algorithms that analyzed client preferences, behavioral data, and emotional cues to dynamically tailor recommendations, while also optimizing data pipelines and database queries for scalability and efficiency. Through A/B testing and performance evaluation, the application demonstrated a 25% improvement in recommendation accuracy and a 30% increase in user engagement, highlighting the effectiveness of integrating advanced personalization techniques with an interactive front-end interface." },
+  { name: "Yet Another Kafka", img: "/kafka.png", description: "A kafka replica using socket programming", additional: "Designed and implemented a Kafka replica by building a custom producer–consumer model using socket programming, JSON-based data serialization, and efficient topic management to simulate real-world distributed streaming. The system was engineered to handle fault tolerance by distributing data across multiple brokers, ensuring reliability and scalability even under heavy workloads. To maintain consistency and coordination among brokers, Zookeeper was integrated for leader election, synchronization, and metadata management, enabling seamless failover and system stability. This project provided hands-on experience with distributed systems, data streaming, and message queue design, while reinforcing concepts of reliability, scalability, and real time data processing that are central to modern event driven architectures." },
+  { name: "Secure Bank Transaction", img: "/banker.png", description: "A kafka replica using socket programming", additional: "This project focused on analyzing modern day daily financial transactions and exploring how encryption can serve as a secure and reliable mechanism for communication between senders and receivers. Using the C programming language, the system was designed with the Playfair cipher encryption and decryption algorithm to ensure that only authorized clients could initiate or process transactions, thereby preventing unauthorized access and enhancing confidentiality. To support secure data handling, MySQL was integrated for storage and retrieval, enabling efficient management of transaction records while maintaining data integrity. The project not only demonstrated the practical implementation of cryptographic algorithms in real world scenarios but also highlighted the importance of secure communication, database integration, and authentication techniques in safeguarding digital transactions." },
 ];
 
 const publications = [
@@ -97,10 +135,10 @@ const publications = [
           "Enhancing Multispectral Vision: A GAN-Based Dehazing Framework for Improved Image Clarity",
         authors: "A Vikram, K Shivakumar, Chaithra, A CS, S SS",
         venue:
-          "Proceedings of the 2024 8th International Conference on Intelligent Systems …",
+          "Proceedings of the 2024 8th International Conference on Intelligent Systems, Metaheuristics & Swarm Intelligence",
         year: "2024",
         award: "Best Paper Award 🏆",
-        links: { Paper: "#", bib: "#" },
+        links: { Paper: "https://dl.acm.org/doi/10.1145/3665065.3665087", bib: "#" },
       },
       {
         title:
@@ -110,7 +148,7 @@ const publications = [
           "2024 IEEE 9th International Conference for Convergence in Technology (I2CT), 1-6",
         year: "2024",
         award: null,
-        links: { Paper: "#", bib: "#" },
+        links: { Paper: "https://ieeexplore.ieee.org/document/10543546", bib: "#" },
       },
     {
       title: "Android malware detection: A comprehensive review",
@@ -119,7 +157,7 @@ const publications = [
       venue: "Research Advances in Network Technologies, 41-82",
       year: "2024",
       award: null,
-      links: { Paper: "#", bib: "#" },
+      links: { Paper: "https://www.taylorfrancis.com/chapters/edit/10.1201/9781003433958-3/android-malware-detection-aaditya-vikram-saravana-bhavan-srujana-golla-yuktha-poral-alan-paul-prasad-honnavalli-supreetha", bib: "#" },
     },
   ];
 
@@ -239,14 +277,38 @@ export default function Portfolio() {
             ))}
           </div>
           {selectedProject && (
-            <motion.div initial={{opacity:0}} animate={{opacity:1}} className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
-              <div className="bg-black/90 border border-yellow-400 rounded-2xl p-8 max-w-lg text-center">
-                <h3 className="text-2xl font-bold mb-4 text-yellow-400">{selectedProject.name}</h3>
-                <p className="mb-6">{selectedProject.description}</p>
-                <button onClick={()=>setSelectedProject(null)} className="bg-yellow-400 text-black font-bold px-6 py-2 rounded-xl hover:bg-yellow-300">Close</button>
-              </div>
-            </motion.div>
-          )}
+  <motion.div 
+    initial={{ opacity: 0 }} 
+    animate={{ opacity: 1 }} 
+    className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+  >
+    <div
+      className={`rounded-2xl p-8 max-w-lg text-center border transition-colors duration-300
+        ${darkMode 
+          ? "bg-black/90 border-yellow-400 text-yellow-300" 
+          : "bg-white border-gray-300 text-gray-800"
+        }`}
+    >
+      <h3 
+        className={`text-2xl font-bold mb-4 
+          ${darkMode ? "text-yellow-400" : "text-gray-800"}`}
+      >
+        {selectedProject.name}
+      </h3>
+      <p className="mb-6 text-left">{selectedProject.additional}</p>
+      <button
+        onClick={() => setSelectedProject(null)}
+        className={`font-bold px-6 py-2 rounded-xl transition-colors duration-200
+          ${darkMode
+            ? "bg-yellow-400 text-black hover:bg-yellow-300"
+            : "bg-gray-800 text-white hover:bg-gray-700"
+          }`}
+      >
+        Close
+      </button>
+    </div>
+  </motion.div>
+)}
         </section>
       )}
 
@@ -254,7 +316,7 @@ export default function Portfolio() {
       {activeSection==="resume" && (
         <section className="p-8 text-center relative z-10">
           <h2 className={`text-2xl font-semibold mb-4 ${darkMode?"text-yellow-400":"text-gray-700"}`}>Resume</h2>
-          <a href="/resume.pdf" target="_blank" className={`${darkMode?"bg-yellow-400 hover:bg-yellow-300 text-black":"bg-gray-800 hover:bg-gray-700 text-white"} px-6 py-2 rounded-md font-bold`}>View Resume</a>
+          <a href="/Aaditya_Vikram_Saravana_Bhavan_Resume.pdf" target="_blank" className={`${darkMode?"bg-yellow-400 hover:bg-yellow-300 text-black":"bg-gray-800 hover:bg-gray-700 text-white"} px-6 py-2 rounded-md font-bold`}>View Resume</a>
         </section>
       )}
 
