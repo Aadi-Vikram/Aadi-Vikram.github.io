@@ -20,12 +20,12 @@ export default function Glance() {
 
       <div className="rule mt-5 pt-5">
         <p className="eyebrow m-0 mb-3.5">Shipped at</p>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3.5">
           {profile.shippedAt.map((c) => (
             <span
               key={c.name}
               title={c.name}
-              className="logo-tile w-[52px] h-[52px] rounded-xl overflow-hidden"
+              className="logo-tile w-[62px] h-[62px] rounded-2xl overflow-hidden"
             >
               <img src={c.logo} alt={`${c.name} logo`} loading="lazy" />
             </span>

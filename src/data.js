@@ -33,7 +33,6 @@ export const profile = {
   glance: [
     { k: "Graduating", v: "December 2026" },
     { k: "Available", v: "January 2027" },
-    { k: "Based", v: "Pittsburgh, open to relocate" },
     { k: "Focus", v: "Backend, distributed systems, ML infrastructure" },
   ],
 
@@ -127,6 +126,7 @@ export const experience = [
   {
     company: "PES University",
     mark: "PES",
+    logo: "/logos/pes.png",
     accent: "#7A5AF8",
     team: "Teaching & Research",
     role: "Teaching Assistant, Cloud Computing · Research Assistant, ISFCR",

@@ -14,12 +14,12 @@ function Role({ job }) {
       {/* Rail: logo + dates */}
       <div className="flex md:flex-col items-center md:items-start gap-3">
         {job.logo ? (
-          <span className="logo-tile w-[60px] h-[60px] shrink-0 rounded-xl overflow-hidden">
+          <span className="logo-tile w-[76px] h-[76px] shrink-0 rounded-2xl overflow-hidden">
             <img src={job.logo} alt={`${job.company} logo`} loading="lazy" />
           </span>
         ) : (
           <span
-            className="logo-tile mono text-[13px] font-bold w-[60px] h-[60px] shrink-0 grid place-items-center rounded-xl"
+            className="logo-tile mono text-[15px] font-bold w-[76px] h-[76px] shrink-0 grid place-items-center rounded-2xl"
             style={{ color: job.accent }}
           >
             {job.mark}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, Linkedin, Mail, ArrowUpRight, MapPin, Code2 } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUpRight, Code2 } from "lucide-react";
 import { profile, stats } from "../data";
 import Throughput from "./Throughput";
 import Glance from "./Glance";
@@ -27,9 +27,6 @@ export default function Hero() {
           >
             <span className="live-dot w-1.5 h-1.5 rounded-full" style={{ background: "var(--signal)" }} />
             {profile.seeking}
-          </span>
-          <span className="eyebrow inline-flex items-center gap-1.5">
-            <MapPin size={11} /> {profile.location}
           </span>
         </div>
 

@@ -339,22 +339,22 @@ button:focus-visible {
 
 /* ── Logo tile ──────────────────────────────────────────── */
 .logo-tile {
-  background: linear-gradient(158deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.018));
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(158deg, rgba(255, 255, 255, 0.115), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(255, 255, 255, 0.17);
   display: grid;
   place-items: center;
   transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .logo-tile img {
-  max-width: 62%;
-  max-height: 62%;
+  max-width: 70%;
+  max-height: 70%;
   object-fit: contain;
 }
 
 article:hover .logo-tile {
-  border-color: rgba(255, 255, 255, 0.26);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.34);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.05);
 }
 
 /* ── Scroll progress ────────────────────────────────────── */

@@ -59,7 +59,7 @@ export default function Contact() {
       <footer className="rule">
         <div className="shell py-8 flex flex-col sm:flex-row justify-between gap-3">
           <p className="mono text-[10.5px] m-0" style={{ color: "var(--faint)" }}>
-            © {new Date().getFullYear()} {profile.fullName} · {profile.location}
+            © {new Date().getFullYear()} {profile.fullName}
           </p>
           <p className="mono text-[10.5px] m-0" style={{ color: "var(--faint)" }}>
             Built with React, Vite and Tailwind
