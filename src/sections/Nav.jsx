@@ -9,12 +9,21 @@ export default function Nav({ dark, onToggleTheme }) {
   const active = useActiveSection(ids);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      setScrolled(window.scrollY > 24);
+      setProgress(max > 0 ? Math.min(1, window.scrollY / max) : 0);
+    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
@@ -63,7 +72,7 @@ export default function Nav({ dark, onToggleTheme }) {
             className="hidden sm:inline-flex items-center gap-1 px-3.5 py-1.5 text-[13px] font-medium rounded-full transition-transform hover:-translate-y-px"
             style={{ background: "var(--ink)", color: "var(--bg)" }}
           >
-            Résumé <ArrowUpRight size={13} strokeWidth={2.5} />
+            Resume <ArrowUpRight size={13} strokeWidth={2.5} />
           </a>
           <button
             onClick={onToggleTheme}
@@ -105,10 +114,16 @@ export default function Nav({ dark, onToggleTheme }) {
             className="py-2.5 text-sm font-medium inline-flex items-center gap-1"
             style={{ color: "var(--accent)" }}
           >
-            Résumé <ArrowUpRight size={13} />
+            Resume <ArrowUpRight size={13} />
           </a>
         </div>
       )}
+
+      <div
+        className="progress"
+        style={{ transform: `scaleX(${progress})`, opacity: scrolled ? 1 : 0 }}
+        aria-hidden="true"
+      />
     </header>
   );
 }

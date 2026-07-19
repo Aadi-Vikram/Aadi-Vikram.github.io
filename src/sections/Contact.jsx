@@ -1,12 +1,13 @@
 import React from "react";
-import { Github, Linkedin, Mail, ArrowUpRight, FileText } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowUpRight, FileText, Code2 } from "lucide-react";
 import { profile } from "../data";
 
 const channels = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}`, icon: Mail },
   { label: "LinkedIn", value: "in/aaditya-vikrams", href: profile.links.linkedin, icon: Linkedin },
   { label: "GitHub", value: "Aadi-Vikram", href: profile.links.github, icon: Github },
-  { label: "Résumé", value: "PDF, one page", href: profile.resume, icon: FileText },
+  { label: "LeetCode", value: "aaditya_vikram", href: profile.links.leetcode, icon: Code2 },
+  { label: "Resume", value: "PDF, one page", href: profile.resume, icon: FileText },
 ];
 
 export default function Contact() {
@@ -27,11 +28,10 @@ export default function Contact() {
           </h2>
           <p className="mt-5 text-[15px] leading-relaxed max-w-[48ch]" style={{ color: "var(--muted)" }}>
             I graduate in December 2026 and I'm looking for backend, distributed systems, or
-            infrastructure roles starting January 2027. Fastest way to reach me is email — I reply
-            the same day.
+            infrastructure roles starting January 2027. The fastest way to reach me is email, and I reply the same day.
           </p>
 
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
             {channels.map(({ label, value, href, icon: Icon }) => (
               <a
                 key={label}

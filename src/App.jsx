@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
+import Backdrop from "./sections/Backdrop";
 import Nav from "./sections/Nav";
 import Hero from "./sections/Hero";
+import Marquee from "./sections/Marquee";
 import Work from "./sections/Work";
 import Projects from "./sections/Projects";
 import Writing from "./sections/Writing";
@@ -18,6 +20,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen">
+      <Backdrop />
       <a
         href="#work"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-full"
@@ -29,6 +32,9 @@ export default function App() {
       <Nav dark={dark} onToggleTheme={() => setDark((v) => !v)} />
       <main>
         <Hero />
+        <div className="max-w-6xl mx-auto px-5 sm:px-8">
+          <Marquee />
+        </div>
         <Work />
         <Projects />
         <Writing />

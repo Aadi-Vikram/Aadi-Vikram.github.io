@@ -42,7 +42,7 @@ same filename, and every resume link on the site updates.
 
 ### Colors and fonts
 
-Design tokens are CSS variables at the top of `src/index.css` — one block for light mode,
+Design tokens are CSS variables at the top of `src/index.css`: one block for light mode,
 one under `html.dark`. Change `--accent` to re-skin the whole site. Fonts load in
 `index.html` (Bricolage Grotesque for display, Inter for body, JetBrains Mono for data).
 

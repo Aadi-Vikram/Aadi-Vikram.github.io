@@ -15,24 +15,26 @@ export const profile = {
   photo: "/IMG_4471.jpg",
   resume: "/Aaditya_Vikram_Saravana_Bhavan_Resume.pdf",
 
-  // Hero thesis — the one sentence a recruiter reads.
-  thesis: [
-    "I make backend systems",
-    "go faster.",
-  ],
+  // Hero headline
+  thesis: {
+    line1: "Systems that scale.",
+    line2: "Models that learn.",
+  },
+
+  now: "Wrapping up my SDE internship on Amazon RDS at AWS this August.",
 
   intro:
-    "Master's student in Computational Data Science at Carnegie Mellon, currently building certificate automation for Amazon RDS. I work where distributed systems meet real traffic — Go services, cloud infrastructure, and data pipelines that hold up when the load arrives. Before CMU I shipped telemetry middleware at Cisco for 10K+ customers and cut data transfer costs at Zscaler.",
+    "I finish my Master's in Computational Data Science at Carnegie Mellon this December, after a summer at AWS building certificate automation for Amazon RDS. My work sits on both sides of the modern stack: Go and Python services that stay fast under real traffic, and deep learning systems I have built down to the autograd. Before CMU I shipped telemetry middleware at Cisco for 10K+ customers and cut data transfer costs at Zscaler.",
 
   links: {
     github: "https://github.com/Aadi-Vikram",
     linkedin: "https://linkedin.com/in/aaditya-vikrams",
     scholar: "https://scholar.google.com/citations?user=2PE-HZMAAAAJ&hl=en",
-    leetcode: "https://leetcode.com/u/Aadi-Vikram/",
+    leetcode: "https://leetcode.com/u/aaditya_vikram/",
   },
 };
 
-// The signature stat — a load-test ramp, animated in the hero.
+// The signature stat: a load-test ramp, animated in the hero.
 export const throughput = {
   from: 200,
   to: 5000,
@@ -53,6 +55,7 @@ export const experience = [
   {
     company: "Amazon Web Services",
     mark: "AWS",
+    logo: "/logos/aws.svg",
     accent: "#FF9900",
     team: "Amazon RDS",
     role: "Software Development Engineer Intern",
@@ -71,6 +74,7 @@ export const experience = [
   {
     company: "Cisco",
     mark: "CS",
+    logo: "/logos/cisco.png",
     accent: "#1BA0D7",
     team: "Catalyst Center",
     role: "Software Development Engineer",
@@ -88,13 +92,14 @@ export const experience = [
   {
     company: "Zscaler",
     mark: "ZS",
+    logo: "/logos/zscaler.png",
     accent: "#0084C6",
     team: "Cloud Security",
     role: "Software Development Engineer Intern",
     period: "Jun 2023 – Aug 2023 · Feb 2024 – Aug 2024",
     place: "Bangalore, India",
     summary:
-      "Two internships on the data path — serialization, storage, and message transport for a security cloud.",
+      "Two internships on the data path: serialization, storage, and message transport for a security cloud.",
     bullets: [
       "Reduced payload size by 40% and transfer latency by 50% using Protocol Buffers; tuned PostgreSQL and PL/pgSQL workloads.",
       "Secured RabbitMQ communication, automated server workflows in Python, and reached 95% unit test coverage.",
@@ -105,6 +110,7 @@ export const experience = [
   {
     company: "PES University",
     mark: "PES",
+    logo: "/logos/pes.jpg",
     accent: "#7A5AF8",
     team: "Teaching & Research",
     role: "Teaching Assistant, Cloud Computing · Research Assistant, ISFCR",
@@ -150,7 +156,7 @@ export const projects = [
     summary:
       "PyTorch-style autograd, forward and backward propagation, and a model zoo built up from NumPy primitives.",
     detail:
-      "Implemented a PyTorch-like deep learning library from first principles: forward and backward propagation, autograd-style training loops, optimizers, and loss functions. On top of the core, built and validated MLPs, CNNs, RNNs including GRU and LSTM cells, and Transformers — each checked against reference gradients. The project made every abstraction the framework normally hides explicit.",
+      "Implemented a PyTorch-like deep learning library from first principles: forward and backward propagation, autograd-style training loops, optimizers, and loss functions. On top of the core, built and validated MLPs, CNNs, RNNs including GRU and LSTM cells, and Transformers, each checked against reference gradients. The project made every abstraction the framework normally hides explicit.",
     stack: ["Python", "NumPy", "Autograd", "CNNs", "Transformers"],
     metrics: [
       { k: "6", v: "model families" },
@@ -167,7 +173,7 @@ export const projects = [
     summary:
       "A Tiramisu generator and PatchGAN discriminator that removes wavelength-dependent haze without estimating transmission maps.",
     detail:
-      "Existing dehazing methods assume RGB imagery and break down on multispectral data, where haze behaves differently in each band. This framework decomposes channels and processes each band individually, uses a modified Tiramisu generator with dense connectivity and skip connections to keep both fine texture and semantic structure, and adds a PatchGAN discriminator to preserve local detail. Trained with adversarial, L1, and perceptual losses, it beat state-of-the-art baselines on the SHIA dataset in both PSNR and SSIM — useful for agriculture, environmental monitoring, and remote sensing.",
+      "Existing dehazing methods assume RGB imagery and break down on multispectral data, where haze behaves differently in each band. This framework decomposes channels and processes each band individually, uses a modified Tiramisu generator with dense connectivity and skip connections to keep both fine texture and semantic structure, and adds a PatchGAN discriminator to preserve local detail. Trained with adversarial, L1, and perceptual losses, it beat state-of-the-art baselines on the SHIA dataset in both PSNR and SSIM, which matters for agriculture, environmental monitoring, and remote sensing.",
     stack: ["TensorFlow", "Python", "GANs", "SHIA dataset"],
     metrics: [
       { k: "🏆", v: "Best Paper, ISMSI 2024" },
@@ -203,7 +209,7 @@ export const projects = [
     summary:
       "A MERN application that personalizes itineraries from stated preferences and behavioral signals.",
     detail:
-      "Built with a four-person team on the MERN stack. I worked on the user profiling and personalization layer — turning preference inputs, behavioral data, and sentiment cues into ranked recommendations — and on the query and pipeline tuning that kept it responsive as the dataset grew. A/B testing showed 25% better recommendation accuracy and 30% higher engagement.",
+      "Built with a four-person team on the MERN stack. I worked on the user profiling and personalization layer, turning preference inputs, behavioral data, and sentiment cues into ranked recommendations, and on the query and pipeline tuning that kept it responsive as the dataset grew. A/B testing showed 25% better recommendation accuracy and 30% higher engagement.",
     stack: ["React", "Node.js", "Express", "MongoDB"],
     metrics: [
       { k: "+25%", v: "recommendation accuracy" },
@@ -230,7 +236,7 @@ export const publications = [
   {
     title: "Enhancing Multispectral Vision: A GAN-Based Dehazing Framework for Improved Image Clarity",
     authors: "A Vikram, K Shivakumar, Chaithra, A CS, S SS",
-    venue: "ISMSI 2024 — 8th International Conference on Intelligent Systems, Metaheuristics & Swarm Intelligence",
+    venue: "ISMSI 2024, 8th International Conference on Intelligent Systems, Metaheuristics and Swarm Intelligence",
     year: "2024",
     award: "Best Paper Award",
     link: "https://dl.acm.org/doi/10.1145/3665065.3665087",
@@ -238,7 +244,7 @@ export const publications = [
   {
     title: "A Pugnacious Comparative Study of Data Analysis Techniques for Wine Quality Prediction",
     authors: "DJ Garodia, A Gadad, A Vikram",
-    venue: "IEEE I2CT 2024 — 9th International Conference for Convergence in Technology",
+    venue: "IEEE I2CT 2024, 9th International Conference for Convergence in Technology",
     year: "2024",
     award: null,
     link: "https://ieeexplore.ieee.org/document/10543546",
@@ -291,4 +297,11 @@ export const sections = [
   { id: "writing", label: "Writing" },
   { id: "toolkit", label: "Toolkit" },
   { id: "contact", label: "Contact" },
+];
+
+// Scrolling strip under the hero.
+export const marquee = [
+  "Go", "PyTorch", "Kubernetes", "AWS Lambda", "PySpark", "Distributed Systems",
+  "Aurora MySQL", "Transformers", "AWS CDK", "Python", "Amazon EKS", "C/C++",
+  "Protocol Buffers", "Computer Vision", "PostgreSQL", "Docker", "TensorFlow", "Java",
 ];

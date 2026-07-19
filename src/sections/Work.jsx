@@ -11,15 +11,20 @@ function Role({ job }) {
       ref={ref}
       className={`reveal ${visible ? "in" : ""} grid md:grid-cols-[168px_1fr] gap-4 md:gap-8 py-9 rule first:border-t-0 first:pt-0`}
     >
-      {/* Rail: dates + mark */}
+      {/* Rail: logo + dates */}
       <div className="flex md:flex-col items-center md:items-start gap-3">
-        <span
-          className="mono text-[11px] font-bold w-10 h-10 shrink-0 grid place-items-center rounded-sm"
-          style={{ background: job.accent, color: "#fff" }}
-          aria-hidden="true"
-        >
-          {job.mark}
-        </span>
+        {job.logo ? (
+          <span className="logo-tile w-12 h-12 shrink-0 rounded-lg overflow-hidden">
+            <img src={job.logo} alt={`${job.company} logo`} loading="lazy" />
+          </span>
+        ) : (
+          <span
+            className="mono text-[11px] font-bold w-12 h-12 shrink-0 grid place-items-center rounded-lg"
+            style={{ background: job.accent, color: "#fff" }}
+          >
+            {job.mark}
+          </span>
+        )}
         <div className="md:mt-3">
           <p className="mono text-[11px] m-0" style={{ color: "var(--muted)" }}>
             {job.period}

@@ -121,7 +121,7 @@ export default function Projects() {
       <SectionHead
         label="Selected projects"
         title="Things I built"
-        note="Systems work first — the numbers are measured, not estimated."
+        note="Systems work first. Every number here was measured, not estimated."
       />
 
       <div className="grid gap-4">
