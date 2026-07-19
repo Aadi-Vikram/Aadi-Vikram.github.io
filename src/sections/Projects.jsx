@@ -1,0 +1,137 @@
+import React, { useState } from "react";
+import { ArrowUpRight, Plus, Minus } from "lucide-react";
+import { projects } from "../data";
+import SectionHead from "./SectionHead";
+import { useReveal } from "../useReveal";
+
+function Metrics({ items, large }) {
+  return (
+    <div className="flex flex-wrap gap-x-7 gap-y-3">
+      {items.map((m) => (
+        <div key={m.v}>
+          <div className={`display ${large ? "text-[1.9rem]" : "text-[1.35rem]"} leading-none`}>{m.k}</div>
+          <div className="mono text-[10px] mt-1.5" style={{ color: "var(--faint)" }}>
+            {m.v}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function Card({ p, flagship }) {
+  const [open, setOpen] = useState(false);
+  const [ref, visible] = useReveal();
+  const bodyId = `proj-${p.name.replace(/\W+/g, "-")}`;
+
+  return (
+    <article
+      ref={ref}
+      className={`reveal ${visible ? "in" : ""} card rounded-lg p-6 sm:p-7 flex flex-col ${
+        flagship ? "grid-paper" : ""
+      }`}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <span className="eyebrow">{p.tag}</span>
+        <span className="mono text-[10px] shrink-0" style={{ color: "var(--faint)" }}>
+          {p.period}
+        </span>
+      </div>
+
+      <h3 className={`display ${flagship ? "text-[clamp(1.6rem,3.6vw,2.35rem)]" : "text-[1.3rem]"} mt-3 mb-0`}>
+        {p.name}
+      </h3>
+
+      <p className="mono text-[10.5px] mt-2 mb-0" style={{ color: "var(--faint)" }}>
+        {p.org}
+      </p>
+
+      <p
+        className={`${flagship ? "text-[15px]" : "text-[13.5px]"} leading-relaxed mt-4 mb-5 max-w-[58ch]`}
+        style={{ color: "var(--muted)" }}
+      >
+        <strong className="font-semibold" style={{ color: "var(--ink)" }}>
+          {p.headline}.
+        </strong>{" "}
+        {p.summary}
+      </p>
+
+      {p.metrics && (
+        <div className="mb-5">
+          <Metrics items={p.metrics} large={flagship} />
+        </div>
+      )}
+
+      {open && (
+        <p
+          id={bodyId}
+          className="text-[13.5px] leading-relaxed mb-5 pl-4 max-w-[64ch]"
+          style={{ color: "var(--muted)", borderLeft: "2px solid var(--accent)" }}
+        >
+          {p.detail}
+        </p>
+      )}
+
+      <div className="mt-auto pt-1 flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap gap-1.5">
+          {p.stack.map((t) => (
+            <span
+              key={t}
+              className="mono text-[10.5px] px-2 py-1 rounded"
+              style={{ background: "var(--bg-alt)", color: "var(--muted)" }}
+            >
+              {t}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-4">
+          {p.link && (
+            <a
+              href={p.link}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1 text-[12.5px] font-medium"
+              style={{ color: "var(--accent)" }}
+            >
+              {p.linkLabel || "Link"} <ArrowUpRight size={13} strokeWidth={2.5} />
+            </a>
+          )}
+          <button
+            onClick={() => setOpen((v) => !v)}
+            aria-expanded={open}
+            aria-controls={bodyId}
+            className="inline-flex items-center gap-1.5 text-[12.5px] font-medium"
+            style={{ color: "var(--ink)" }}
+          >
+            {open ? <Minus size={13} strokeWidth={2.5} /> : <Plus size={13} strokeWidth={2.5} />}
+            {open ? "Less" : "How it works"}
+          </button>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+export default function Projects() {
+  const [flagship, ...rest] = projects;
+
+  return (
+    <section id="projects" className="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+      <SectionHead
+        label="Selected projects"
+        title="Things I built"
+        note="Systems work first — the numbers are measured, not estimated."
+      />
+
+      <div className="grid gap-4">
+        <Card p={flagship} flagship />
+        <div className="grid md:grid-cols-2 gap-4">
+          {rest.map((p) => (
+            <Card key={p.name} p={p} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
