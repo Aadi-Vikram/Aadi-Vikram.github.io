@@ -23,8 +23,11 @@ export const profile = {
 
   now: "Wrapping up my SDE internship on Amazon RDS at AWS this August.",
 
+  // Large opening line, then the supporting paragraph beneath it.
+  lead: "I like the problems that only show up at scale.",
+
   intro:
-    "I finish my Master's in Computational Data Science at Carnegie Mellon this December, after a summer at AWS building certificate automation for Amazon RDS. My work sits on both sides of the modern stack: Go and Python services that stay fast under real traffic, and deep learning systems I have built down to the autograd. Before CMU I shipped telemetry middleware at Cisco for 10K+ customers and cut data transfer costs at Zscaler.",
+    "At AWS I automate the certificate infrastructure behind Amazon RDS, the kind of work where one missed edge case blocks a region launch. At CMU I took a recommendation service from 200 to 5,000 sustained requests per second over a terabyte of data, and wrote a deep learning library from the autograd up so nothing about training stayed a black box. Before that: telemetry middleware at Cisco serving 10K+ customers, and payloads 40% smaller at Zscaler. I graduate this December and I am looking for a role where systems work and machine learning meet.",
 
   links: {
     github: "https://github.com/Aadi-Vikram",
@@ -69,7 +72,7 @@ export const experience = [
       "Cut regional certificate publication from weeks to days with 2 AWS Lambda functions plus AWS CDK and IAM infrastructure that automate a multi-step public trust-store workflow.",
       "Automated internal trust-store onboarding for new regions: secure network connectivity, retrieval of newly issued certificates, and generated code reviews for certificate repository updates.",
     ],
-    stack: ["AWS Lambda", "AWS CDK", "IAM", "PKI", "Python"],
+    stack: ["Java", "AWS Lambda", "AWS CDK", "IAM", "PKI"],
   },
   {
     company: "Cisco",

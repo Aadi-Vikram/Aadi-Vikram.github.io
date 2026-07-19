@@ -40,10 +40,19 @@ two/three-letter monogram, `accent` its color, `current: true` adds the "Now" ba
 Replace `public/Aaditya_Vikram_Saravana_Bhavan_Resume.pdf` with the new file, keeping the
 same filename, and every resume link on the site updates.
 
+### Background style
+
+`src/config.js` holds one value, `BACKDROP`, with seven options: `nodes` (the default,
+a live cluster graph on canvas), `mesh`, `aurora`, `spotlight`, `grid`, `dots`, `none`. To compare them, run the site and add `?bg` to the
+URL (`http://localhost:5173/?bg`). A picker appears in the corner, and clicking through
+swaps the background live. Set your favourite as `BACKDROP` and the picker stays hidden
+for everyone else.
+
 ### Colors and fonts
 
-Design tokens are CSS variables at the top of `src/index.css`: one block for light mode,
-one under `html.dark`. Change `--accent` to re-skin the whole site. Fonts load in
+The site is dark only. Design tokens are CSS variables in the `:root` block at the top of
+`src/index.css`. Change `--accent` to re-skin everything, or `--grad-1/2/3` to change the
+headline gradient and buttons. Fonts load in
 `index.html` (Bricolage Grotesque for display, Inter for body, JetBrains Mono for data).
 
 ## Structure
@@ -56,6 +65,7 @@ src/
   useReveal.js         scroll-reveal + active-nav-section hooks
   sections/
     Nav.jsx            sticky header
+    NodeMesh.jsx       canvas cluster graph behind the page
     Hero.jsx           headline, stats
     Throughput.jsx     animated 200 -> 5,000 RPS chart
     Work.jsx           experience timeline + education

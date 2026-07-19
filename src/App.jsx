@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Backdrop from "./sections/Backdrop";
+import BackdropPicker from "./sections/BackdropPicker";
 import Nav from "./sections/Nav";
 import Hero from "./sections/Hero";
 import Marquee from "./sections/Marquee";
@@ -8,19 +9,19 @@ import Projects from "./sections/Projects";
 import Writing from "./sections/Writing";
 import Toolkit from "./sections/Toolkit";
 import Contact from "./sections/Contact";
+import { BACKDROP } from "./config";
 
 export default function App() {
-  const [dark, setDark] = useState(
-    () => typeof window !== "undefined" && window.matchMedia?.("(prefers-color-scheme: dark)").matches
-  );
+  const [backdrop, setBackdrop] = useState(BACKDROP);
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-  }, [dark]);
+  // ?bg in the URL opens the background picker. Visitors never see it.
+  const showPicker =
+    typeof window !== "undefined" && new URLSearchParams(window.location.search).has("bg");
 
   return (
     <div className="min-h-screen">
-      <Backdrop />
+      <Backdrop variant={backdrop} />
+
       <a
         href="#work"
         className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-full"
@@ -29,7 +30,7 @@ export default function App() {
         Skip to content
       </a>
 
-      <Nav dark={dark} onToggleTheme={() => setDark((v) => !v)} />
+      <Nav />
       <main>
         <Hero />
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
@@ -41,6 +42,8 @@ export default function App() {
         <Toolkit />
         <Contact />
       </main>
+
+      {showPicker && <BackdropPicker value={backdrop} onChange={setBackdrop} />}
     </div>
   );
 }

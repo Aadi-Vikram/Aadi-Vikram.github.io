@@ -53,8 +53,15 @@ export default function Hero() {
             </p>
 
             <p
-              className="fade-up mt-6 text-[15px] sm:text-[15.5px] leading-relaxed max-w-[54ch]"
-              style={{ color: "var(--muted)", animationDelay: "0.6s" }}
+              className="fade-up mt-6 text-[19px] sm:text-[21px] font-medium leading-snug max-w-[26ch]"
+              style={{ color: "var(--ink)", animationDelay: "0.58s" }}
+            >
+              {profile.lead}
+            </p>
+
+            <p
+              className="fade-up mt-4 text-[14.5px] sm:text-[15px] leading-relaxed max-w-[56ch]"
+              style={{ color: "var(--muted)", animationDelay: "0.66s" }}
             >
               {profile.intro}
             </p>

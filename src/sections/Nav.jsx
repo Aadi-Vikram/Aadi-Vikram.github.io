@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Sun, Moon, ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { profile, sections } from "../data";
 import { useActiveSection } from "../useReveal";
 
 const ids = sections.map((s) => s.id);
 
-export default function Nav({ dark, onToggleTheme }) {
+export default function Nav() {
   const active = useActiveSection(ids);
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -74,14 +74,6 @@ export default function Nav({ dark, onToggleTheme }) {
           >
             Resume <ArrowUpRight size={13} strokeWidth={2.5} />
           </a>
-          <button
-            onClick={onToggleTheme}
-            aria-label={dark ? "Switch to light theme" : "Switch to dark theme"}
-            className="w-8 h-8 grid place-items-center rounded-full transition-colors"
-            style={{ border: "1px solid var(--line)", color: "var(--muted)" }}
-          >
-            {dark ? <Sun size={14} /> : <Moon size={14} />}
-          </button>
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
