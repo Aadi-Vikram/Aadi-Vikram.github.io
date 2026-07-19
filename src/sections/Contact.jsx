@@ -13,7 +13,7 @@ const channels = [
 export default function Contact() {
   return (
     <>
-      <section id="contact" className="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-24">
+      <section id="contact" className="shell py-16 sm:py-24">
         <div className="rule pt-10">
           <img
             src={profile.photo}
@@ -26,7 +26,7 @@ export default function Contact() {
           <h2 className="display text-[clamp(2.2rem,6vw,3.75rem)] mt-3 max-w-[16ch]">
             Hiring for new grad? Let's talk.
           </h2>
-          <p className="mt-5 text-[15px] leading-relaxed max-w-[48ch]" style={{ color: "var(--muted)" }}>
+          <p className="mt-5 text-[16.5px] leading-relaxed max-w-[50ch]" style={{ color: "var(--muted)" }}>
             I graduate in December 2026 and I'm looking for backend, distributed systems, or
             infrastructure roles starting January 2027. The fastest way to reach me is email, and I reply the same day.
           </p>
@@ -38,7 +38,7 @@ export default function Contact() {
                 href={href}
                 target={href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noreferrer"
-                className="card rounded-lg p-4 group"
+                className="card rounded-xl p-5 group"
               >
                 <div className="flex items-center justify-between">
                   <Icon size={16} style={{ color: "var(--accent)" }} />
@@ -49,7 +49,7 @@ export default function Contact() {
                   />
                 </div>
                 <p className="eyebrow mt-4 mb-1">{label}</p>
-                <p className="text-[13px] font-medium m-0 break-all">{value}</p>
+                <p className="text-[14px] font-medium m-0 break-all">{value}</p>
               </a>
             ))}
           </div>
@@ -57,7 +57,7 @@ export default function Contact() {
       </section>
 
       <footer className="rule">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row justify-between gap-3">
+        <div className="shell py-8 flex flex-col sm:flex-row justify-between gap-3">
           <p className="mono text-[10.5px] m-0" style={{ color: "var(--faint)" }}>
             © {new Date().getFullYear()} {profile.fullName} · {profile.location}
           </p>

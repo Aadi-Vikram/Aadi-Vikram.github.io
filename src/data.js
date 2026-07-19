@@ -29,6 +29,20 @@ export const profile = {
   intro:
     "At AWS I automate the certificate infrastructure behind Amazon RDS, the kind of work where one missed edge case blocks a region launch. At CMU I took a recommendation service from 200 to 5,000 sustained requests per second over a terabyte of data, and wrote a deep learning library from the autograd up so nothing about training stayed a black box. Before that: telemetry middleware at Cisco serving 10K+ customers, and payloads 40% smaller at Zscaler. I graduate this December and I am looking for a role where systems work and machine learning meet.",
 
+  // Fills the panel under the hero chart. Recruiters scan this first.
+  glance: [
+    { k: "Graduating", v: "December 2026" },
+    { k: "Available", v: "January 2027" },
+    { k: "Based", v: "Pittsburgh, open to relocate" },
+    { k: "Focus", v: "Backend, distributed systems, ML infrastructure" },
+  ],
+
+  shippedAt: [
+    { name: "Amazon Web Services", logo: "/logos/aws.svg" },
+    { name: "Cisco", logo: "/logos/cisco.png" },
+    { name: "Zscaler", logo: "/logos/zscaler.png" },
+  ],
+
   links: {
     github: "https://github.com/Aadi-Vikram",
     linkedin: "https://linkedin.com/in/aaditya-vikrams",
@@ -113,7 +127,6 @@ export const experience = [
   {
     company: "PES University",
     mark: "PES",
-    logo: "/logos/pes.jpg",
     accent: "#7A5AF8",
     team: "Teaching & Research",
     role: "Teaching Assistant, Cloud Computing · Research Assistant, ISFCR",

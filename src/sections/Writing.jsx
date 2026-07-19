@@ -12,20 +12,20 @@ function Entry({ pub }) {
       href={pub.link}
       target="_blank"
       rel="noreferrer"
-      className={`reveal ${visible ? "in" : ""} group block rule py-6 first:border-t-0 first:pt-0`}
+      className={`reveal ${visible ? "in" : ""} group block rule py-8 first:border-t-0 first:pt-0`}
     >
-      <div className="grid md:grid-cols-[60px_1fr_auto] gap-2 md:gap-6 items-baseline">
+      <div className="grid md:grid-cols-[70px_1fr_auto] gap-2 md:gap-8 items-baseline">
         <span className="mono text-[11px]" style={{ color: "var(--faint)" }}>
           {pub.year}
         </span>
         <div>
-          <h3 className="text-[15.5px] sm:text-[17px] font-semibold leading-snug m-0 max-w-[58ch] transition-colors group-hover:opacity-70">
+          <h3 className="text-[17px] sm:text-[19.5px] font-semibold leading-snug m-0 max-w-[58ch] transition-colors group-hover:opacity-70">
             {pub.title}
           </h3>
-          <p className="text-[12.5px] m-0 mt-1.5" style={{ color: "var(--muted)" }}>
+          <p className="text-[13.5px] m-0 mt-2" style={{ color: "var(--muted)" }}>
             {pub.venue}
           </p>
-          <p className="mono text-[10.5px] m-0 mt-1" style={{ color: "var(--faint)" }}>
+          <p className="mono text-[11.5px] m-0 mt-1.5" style={{ color: "var(--faint)" }}>
             {pub.authors}
           </p>
           {pub.award && (
@@ -38,7 +38,7 @@ function Entry({ pub }) {
           )}
         </div>
         <span
-          className="inline-flex items-center gap-1 text-[12.5px] font-medium shrink-0"
+          className="inline-flex items-center gap-1 text-[13.5px] font-medium shrink-0"
           style={{ color: "var(--accent)" }}
         >
           Paper <ArrowUpRight size={13} strokeWidth={2.5} />
@@ -50,7 +50,7 @@ function Entry({ pub }) {
 
 export default function Writing() {
   return (
-    <section id="writing" className="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+    <section id="writing" className="shell py-16 sm:py-20">
       <SectionHead
         label="Publications"
         title="Research I've written"

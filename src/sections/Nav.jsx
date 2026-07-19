@@ -35,7 +35,7 @@ export default function Nav() {
         borderBottom: `1px solid ${scrolled ? "var(--line)" : "transparent"}`,
       }}
     >
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 h-[68px] flex items-center justify-between gap-4">
+      <div className="shell h-[68px] flex items-center justify-between gap-4">
         <a href="#top" className="flex items-center gap-2.5 group shrink-0">
           <span
             className="mono text-[11px] font-bold w-7 h-7 grid place-items-center rounded-sm"
@@ -43,7 +43,7 @@ export default function Nav() {
           >
             AV
           </span>
-          <span className="hidden sm:block text-[13px] font-semibold tracking-tight">
+          <span className="hidden sm:block text-[14px] font-semibold tracking-tight">
             {profile.name}
           </span>
         </a>
@@ -53,7 +53,7 @@ export default function Nav() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="px-3 py-1.5 text-[13px] rounded-full transition-colors"
+              className="px-3.5 py-1.5 text-[14px] rounded-full transition-colors"
               style={{
                 color: active === s.id ? "var(--ink)" : "var(--muted)",
                 background: active === s.id ? "var(--accent-soft)" : "transparent",
@@ -69,7 +69,7 @@ export default function Nav() {
             href={profile.resume}
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:inline-flex items-center gap-1 px-3.5 py-1.5 text-[13px] font-medium rounded-full transition-transform hover:-translate-y-px"
+            className="hidden sm:inline-flex items-center gap-1 px-4 py-2 text-[13.5px] font-medium rounded-full transition-transform hover:-translate-y-px"
             style={{ background: "var(--ink)", color: "var(--bg)" }}
           >
             Resume <ArrowUpRight size={13} strokeWidth={2.5} />

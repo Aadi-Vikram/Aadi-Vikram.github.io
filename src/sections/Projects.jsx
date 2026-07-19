@@ -9,7 +9,7 @@ function Metrics({ items, large }) {
     <div className="flex flex-wrap gap-x-7 gap-y-3">
       {items.map((m) => (
         <div key={m.v}>
-          <div className={`display ${large ? "text-[1.9rem]" : "text-[1.35rem]"} leading-none`}>{m.k}</div>
+          <div className={`display ${large ? "text-[2.15rem]" : "text-[1.5rem]"} leading-none`}>{m.k}</div>
           <div className="mono text-[10px] mt-1.5" style={{ color: "var(--faint)" }}>
             {m.v}
           </div>
@@ -27,7 +27,7 @@ function Card({ p, flagship }) {
   return (
     <article
       ref={ref}
-      className={`reveal ${visible ? "in" : ""} card rounded-lg p-6 sm:p-7 flex flex-col ${
+      className={`reveal ${visible ? "in" : ""} card rounded-xl p-7 sm:p-8 flex flex-col ${
         flagship ? "grid-paper" : ""
       }`}
     >
@@ -38,16 +38,16 @@ function Card({ p, flagship }) {
         </span>
       </div>
 
-      <h3 className={`display ${flagship ? "text-[clamp(1.6rem,3.6vw,2.35rem)]" : "text-[1.3rem]"} mt-3 mb-0`}>
+      <h3 className={`display ${flagship ? "text-[clamp(1.8rem,3.8vw,2.6rem)]" : "text-[1.45rem]"} mt-3 mb-0`}>
         {p.name}
       </h3>
 
-      <p className="mono text-[10.5px] mt-2 mb-0" style={{ color: "var(--faint)" }}>
+      <p className="mono text-[11.5px] mt-2 mb-0" style={{ color: "var(--faint)" }}>
         {p.org}
       </p>
 
       <p
-        className={`${flagship ? "text-[15px]" : "text-[13.5px]"} leading-relaxed mt-4 mb-5 max-w-[58ch]`}
+        className={`${flagship ? "text-[16.5px]" : "text-[15px]"} leading-relaxed mt-4 mb-6 max-w-[60ch]`}
         style={{ color: "var(--muted)" }}
       >
         <strong className="font-semibold" style={{ color: "var(--ink)" }}>
@@ -65,7 +65,7 @@ function Card({ p, flagship }) {
       {open && (
         <p
           id={bodyId}
-          className="text-[13.5px] leading-relaxed mb-5 pl-4 max-w-[64ch]"
+          className="text-[14.5px] leading-relaxed mb-5 pl-5 max-w-[66ch]"
           style={{ color: "var(--muted)", borderLeft: "2px solid var(--accent)" }}
         >
           {p.detail}
@@ -77,7 +77,7 @@ function Card({ p, flagship }) {
           {p.stack.map((t) => (
             <span
               key={t}
-              className="mono text-[10.5px] px-2 py-1 rounded"
+              className="mono text-[11.5px] px-2.5 py-1.5 rounded"
               style={{ background: "var(--bg-alt)", color: "var(--muted)" }}
             >
               {t}
@@ -91,7 +91,7 @@ function Card({ p, flagship }) {
               href={p.link}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1 text-[12.5px] font-medium"
+              className="inline-flex items-center gap-1 text-[13.5px] font-medium"
               style={{ color: "var(--accent)" }}
             >
               {p.linkLabel || "Link"} <ArrowUpRight size={13} strokeWidth={2.5} />
@@ -101,7 +101,7 @@ function Card({ p, flagship }) {
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls={bodyId}
-            className="inline-flex items-center gap-1.5 text-[12.5px] font-medium"
+            className="inline-flex items-center gap-1.5 text-[13.5px] font-medium"
             style={{ color: "var(--ink)" }}
           >
             {open ? <Minus size={13} strokeWidth={2.5} /> : <Plus size={13} strokeWidth={2.5} />}
@@ -117,7 +117,7 @@ export default function Projects() {
   const [flagship, ...rest] = projects;
 
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-5 sm:px-8 py-16 sm:py-20">
+    <section id="projects" className="shell py-16 sm:py-20">
       <SectionHead
         label="Selected projects"
         title="Things I built"

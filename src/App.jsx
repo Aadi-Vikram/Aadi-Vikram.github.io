@@ -33,7 +33,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="shell">
           <Marquee />
         </div>
         <Work />

@@ -85,7 +85,7 @@ export default function Throughput() {
 
       <div className="px-4 sm:px-5 flex items-end gap-2">
         <span
-          className="display text-[3.25rem] sm:text-[4.25rem] tabular-nums leading-none"
+          className="display text-[3.5rem] sm:text-[4.6rem] tabular-nums leading-none"
           style={{ color: "var(--ink)" }}
         >
           {count.toLocaleString()}
@@ -134,7 +134,7 @@ export default function Throughput() {
       </svg>
 
       <div className="px-4 sm:px-5 pb-4 -mt-1">
-        <p className="text-[13px] leading-snug m-0" style={{ color: "var(--ink)" }}>
+        <p className="text-[14px] leading-snug m-0" style={{ color: "var(--ink)" }}>
           {throughput.caption}
         </p>
         <p className="mono text-[10.5px] mt-1 m-0" style={{ color: "var(--faint)" }}>

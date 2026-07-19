@@ -2,6 +2,7 @@ import React from "react";
 import { Github, Linkedin, Mail, ArrowUpRight, MapPin, Code2 } from "lucide-react";
 import { profile, stats } from "../data";
 import Throughput from "./Throughput";
+import Glance from "./Glance";
 
 const socials = [
   { href: profile.links.github, icon: Github, label: "GitHub" },
@@ -12,7 +13,7 @@ const socials = [
 export default function Hero() {
   return (
     <section id="top" className="relative pt-28 sm:pt-36 pb-14">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8">
+      <div className="shell">
         {/* Availability */}
         <div className="fade-up flex flex-wrap items-center gap-x-4 gap-y-2 mb-9" style={{ animationDelay: "0.1s" }}>
           <span
@@ -32,10 +33,10 @@ export default function Hero() {
           </span>
         </div>
 
-        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-[1.08fr_1fr] gap-10 lg:gap-16 items-start">
           {/* Headline */}
           <div>
-            <h1 className="display text-[clamp(2.9rem,8.2vw,5.4rem)]">
+            <h1 className="display text-[clamp(3rem,7.6vw,5.9rem)]">
               <span className="line-mask">
                 <span className="line-inner" style={{ animationDelay: "0.15s" }}>
                   {profile.thesis.line1}
@@ -48,19 +49,19 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="fade-up mono text-[11px] mt-6 tracking-wide" style={{ color: "var(--faint)", animationDelay: "0.5s" }}>
+            <p className="fade-up mono text-[11.5px] mt-7 tracking-wide" style={{ color: "var(--faint)", animationDelay: "0.5s" }}>
               SOFTWARE ENGINEER · MCDS @ CARNEGIE MELLON · DEC 2026
             </p>
 
             <p
-              className="fade-up mt-6 text-[19px] sm:text-[21px] font-medium leading-snug max-w-[26ch]"
+              className="fade-up mt-7 text-[21px] sm:text-[24px] font-medium leading-snug max-w-[34ch]"
               style={{ color: "var(--ink)", animationDelay: "0.58s" }}
             >
               {profile.lead}
             </p>
 
             <p
-              className="fade-up mt-4 text-[14.5px] sm:text-[15px] leading-relaxed max-w-[56ch]"
+              className="fade-up mt-4 text-[15px] sm:text-[16px] leading-relaxed max-w-[58ch]"
               style={{ color: "var(--muted)", animationDelay: "0.66s" }}
             >
               {profile.intro}
@@ -71,7 +72,7 @@ export default function Hero() {
                 href={profile.resume}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-medium transition-transform hover:-translate-y-px"
+                className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full text-[15px] font-medium transition-transform hover:-translate-y-px"
                 style={{
                   background: "linear-gradient(100deg, var(--grad-1), var(--grad-2))",
                   color: "#fff",
@@ -82,7 +83,7 @@ export default function Hero() {
               </a>
               <a
                 href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-medium"
+                className="inline-flex items-center gap-1.5 px-6 py-3 rounded-full text-[15px] font-medium"
                 style={{ border: "1px solid var(--line)", color: "var(--ink)", background: "var(--surface)" }}
               >
                 <Mail size={15} /> Get in touch
@@ -109,9 +110,10 @@ export default function Hero() {
           {/* Signature chart */}
           <div className="fade-up panel-glow lg:pt-3" style={{ animationDelay: "0.85s" }}>
             <Throughput />
-            <p className="mono text-[10.5px] mt-3 text-center" style={{ color: "var(--faint)" }}>
+            <p className="mono text-[11px] mt-3 mb-5 text-center" style={{ color: "var(--faint)" }}>
               {profile.now}
             </p>
+            <Glance />
           </div>
         </div>
 
@@ -119,8 +121,8 @@ export default function Hero() {
         <dl className="mt-14 sm:mt-20 grid grid-cols-2 md:grid-cols-4 rule pt-8 gap-y-8">
           {stats.map((s, i) => (
             <div key={s.label} className={i > 0 ? "md:pl-7" : ""}>
-              <dt className="display text-[1.75rem] sm:text-[2.1rem]">{s.value}</dt>
-              <dd className="m-0 mt-1.5 text-[13px] font-medium">{s.label}</dd>
+              <dt className="display text-[2rem] sm:text-[2.45rem]">{s.value}</dt>
+              <dd className="m-0 mt-2 text-[14px] font-medium">{s.label}</dd>
               <dd className="m-0 mono text-[10.5px] mt-0.5" style={{ color: "var(--faint)" }}>
                 {s.sub}
               </dd>

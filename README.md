@@ -31,6 +31,7 @@ routine updates:
 | Skills | `skills` |
 | Degrees and coursework | `education` |
 | Nav links | `sections` |
+| The panel under the hero chart | `profile.glance` and `profile.shippedAt` |
 
 Adding a job: copy an existing object in `experience` and change the fields. `mark` is the
 two/three-letter monogram, `accent` its color, `current: true` adds the "Now" badge.
@@ -67,6 +68,7 @@ src/
     Nav.jsx            sticky header
     NodeMesh.jsx       canvas cluster graph behind the page
     Hero.jsx           headline, stats
+    Glance.jsx         availability panel and company logos
     Throughput.jsx     animated 200 -> 5,000 RPS chart
     Work.jsx           experience timeline + education
     Projects.jsx       expandable project cards
@@ -74,3 +76,10 @@ src/
     Toolkit.jsx        skills
     Contact.jsx        contact + footer
 ```
+
+## Logos
+
+`public/logos/` holds white marks on transparent backgrounds, sized to sit on the dark
+tiles. To add a company: normalise the artwork to a white silhouette on transparency,
+drop it in that folder, and point the `logo` field of the relevant `experience` entry at
+it. Any entry without a `logo` falls back to the `mark` wordmark tile.
