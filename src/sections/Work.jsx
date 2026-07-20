@@ -2,6 +2,7 @@ import React from "react";
 import { experience, education } from "../data";
 import SectionHead from "./SectionHead";
 import { useReveal } from "../useReveal";
+import CmuMark from "./CmuMark";
 
 function Role({ job }) {
   const [ref, visible] = useReveal();
@@ -112,12 +113,7 @@ export default function Work() {
                   <img src={e.logo} alt={`${e.school} logo`} loading="lazy" />
                 </span>
               ) : (
-                <span
-                  className="logo-tile w-[54px] h-[54px] shrink-0 rounded-xl grid place-items-center display text-[14px]"
-                  style={{ color: e.accent }}
-                >
-                  {e.mark}
-                </span>
+                <CmuMark size={54} radius="rounded-xl" text={15} />
               )}
               <div className="min-w-0 flex-1">
                 <div className="flex items-baseline justify-between gap-3">

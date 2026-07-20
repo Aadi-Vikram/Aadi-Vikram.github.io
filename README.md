@@ -70,6 +70,7 @@ src/
     NodeMesh.jsx       canvas cluster graph behind the page
     Hero.jsx           headline, stats
     Glance.jsx         availability panel and company logos
+    CmuMark.jsx        Carnegie Mellon lettermark
     Throughput.jsx     animated 200 -> 5,000 RPS chart
     Work.jsx           experience timeline + education
     Projects.jsx       expandable project cards
@@ -80,11 +81,11 @@ src/
 
 ## The CMU mark
 
-Carnegie Mellon has no freely licensed vector wordmark, so the education tile uses a
-typographic "CMU" in their cardinal red rather than a poor reproduction. To use the real
-mark, download the official SVG from CMU's brand portal, save it as
-`public/logos/cmu.svg`, and add `logo: "/logos/cmu.svg"` to `profile.studyingAt` and to
-the Carnegie Mellon entry in `education`.
+Carnegie Mellon requires a licensing agreement to use the wordmark outside the
+university, so the site uses their official "CMU" lettermark instead. Their visual
+identity rules require the lettermark to be black, grey, white or red, and to appear
+alongside another CMU reference. `src/sections/CmuMark.jsx` sets it in cardinal red with
+a tartan band, and the university name always sits beside it.
 
 ## Logos
 

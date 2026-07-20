@@ -24,10 +24,10 @@ export const profile = {
   now: "Wrapping up my SDE internship on Amazon RDS at AWS this August.",
 
   // Large opening line, then the supporting paragraph beneath it.
-  lead: "I'm Aaditya. I like the problems that only show up at scale.",
+  lead: "I'm Aaditya. I like solving problems, especially the ones that only show up at scale.",
 
   intro:
-    "That's been most of my work so far. At AWS I'm on the certificate pipeline behind Amazon RDS, where one missed edge case holds up a whole region launch. At CMU I took a recommendation service from 200 to 5,000 sustained requests per second, then wrote a deep learning library from the autograd up because I didn't want training to stay a black box. Cisco and Zscaler before that, and three published papers with a Best Paper award along the way. I graduate in December and I'm looking for a team where systems work and machine learning sit in the same job.",
+    "Most of my code has run in production for people who never knew it was there. I'm finishing a Master's in Computational Data Science at Carnegie Mellon this December with a 4.00. This summer I'm at AWS, automating the certificate infrastructure behind Amazon RDS so new regions can launch on schedule. Before CMU I spent a year at Cisco building Go telemetry middleware that served 10,000+ customers, and eight months at Zscaler on the data path, where moving to Protocol Buffers cut payload size by 40%. Three published papers along the way, one of them a Best Paper award, and I solve algorithm problems for fun (LeetCode Knight, top 2.75%). I'm looking for a new grad role in backend, distributed systems, or ML infrastructure.",
 
   // Fills the panel under the hero chart. Recruiters scan this first.
   glance: [
