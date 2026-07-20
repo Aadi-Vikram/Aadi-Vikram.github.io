@@ -381,20 +381,3 @@ article:hover .logo-tile {
     mask-image: radial-gradient(ellipse 90% 40% at 50% 26%, rgba(0, 0, 0, 0.1) 0%, #000 70%);
   }
 }
-
-/* ── CMU lettermark ─────────────────────────────────────────
-   Carnegie Mellon's brand standards allow the "CMU" lettermark in
-   black, grey, white or red, provided it sits alongside another CMU
-   reference. Here it carries a tartan band and the university name.  */
-.tartan-band {
-  background-image: repeating-linear-gradient(
-    90deg,
-    #c41230 0 7px,
-    #8d0c22 7px 10px,
-    #16181a 10px 17px,
-    #6e7175 17px 19px,
-    #16181a 19px 26px,
-    #c41230 26px 33px,
-    #16181a 33px 36px
-  );
-}

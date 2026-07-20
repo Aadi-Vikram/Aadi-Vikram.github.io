@@ -113,7 +113,7 @@ export default function Work() {
                   <img src={e.logo} alt={`${e.school} logo`} loading="lazy" />
                 </span>
               ) : (
-                <CmuMark size={54} radius="rounded-xl" text={15} />
+                <CmuMark size={54} radius="rounded-xl" text={16} />
               )}
               <div className="min-w-0 flex-1">
                 <div className="flex items-baseline justify-between gap-3">

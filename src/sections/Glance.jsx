@@ -22,7 +22,7 @@ export default function Glance() {
       <div className="rule mt-5 pt-5">
         <p className="eyebrow m-0 mb-3.5">Studying at</p>
         <div className="flex items-center gap-3.5">
-          <CmuMark size={62} text={17} />
+          <CmuMark size={62} text={19} />
           <div>
             <p className="m-0 text-[14px] font-semibold leading-tight">{profile.studyingAt.name}</p>
             <p className="m-0 mono text-[10.5px] mt-1.5" style={{ color: "var(--faint)" }}>

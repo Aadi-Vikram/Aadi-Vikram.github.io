@@ -84,8 +84,8 @@ src/
 Carnegie Mellon requires a licensing agreement to use the wordmark outside the
 university, so the site uses their official "CMU" lettermark instead. Their visual
 identity rules require the lettermark to be black, grey, white or red, and to appear
-alongside another CMU reference. `src/sections/CmuMark.jsx` sets it in cardinal red with
-a tartan band, and the university name always sits beside it.
+alongside another CMU reference. `src/sections/CmuMark.jsx` sets it in cardinal red, and the
+university name always sits beside it.
 
 ## Logos
 
