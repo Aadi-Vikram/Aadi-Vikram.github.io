@@ -14,6 +14,22 @@ export default function Hero() {
   return (
     <section id="top" className="relative pt-28 sm:pt-36 pb-14">
       <div className="shell">
+        {/* Who this is */}
+        <div className="fade-up flex items-center gap-4 mb-7" style={{ animationDelay: "0.05s" }}>
+          <img
+            src={profile.photo}
+            alt={profile.fullName}
+            className="w-[58px] h-[58px] rounded-full object-cover shrink-0"
+            style={{ border: "1px solid rgba(255,255,255,0.18)" }}
+          />
+          <div>
+            <p className="m-0 text-[17px] font-semibold tracking-tight">{profile.fullName}</p>
+            <p className="m-0 mono text-[11px] mt-1" style={{ color: "var(--faint)" }}>
+              SOFTWARE ENGINEER · MCDS @ CARNEGIE MELLON · DEC 2026
+            </p>
+          </div>
+        </div>
+
         {/* Availability */}
         <div className="fade-up flex flex-wrap items-center gap-x-4 gap-y-2 mb-9" style={{ animationDelay: "0.1s" }}>
           <span
@@ -46,12 +62,8 @@ export default function Hero() {
               </span>
             </h1>
 
-            <p className="fade-up mono text-[11.5px] mt-7 tracking-wide" style={{ color: "var(--faint)", animationDelay: "0.5s" }}>
-              SOFTWARE ENGINEER · MCDS @ CARNEGIE MELLON · DEC 2026
-            </p>
-
             <p
-              className="fade-up mt-7 text-[21px] sm:text-[24px] font-medium leading-snug max-w-[34ch]"
+              className="fade-up mt-8 text-[21px] sm:text-[24px] font-medium leading-snug max-w-[36ch]"
               style={{ color: "var(--ink)", animationDelay: "0.58s" }}
             >
               {profile.lead}

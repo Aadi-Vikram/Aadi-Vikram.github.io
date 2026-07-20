@@ -31,7 +31,8 @@ routine updates:
 | Skills | `skills` |
 | Degrees and coursework | `education` |
 | Nav links | `sections` |
-| The panel under the hero chart | `profile.glance` and `profile.shippedAt` |
+| The panel under the hero chart | `profile.glance`, `profile.studyingAt`, `profile.shippedAt` |
+| How many projects show before "Show more" | `SHOWN` in `src/sections/Projects.jsx` |
 
 Adding a job: copy an existing object in `experience` and change the fields. `mark` is the
 two/three-letter monogram, `accent` its color, `current: true` adds the "Now" badge.
@@ -76,6 +77,14 @@ src/
     Toolkit.jsx        skills
     Contact.jsx        contact + footer
 ```
+
+## The CMU mark
+
+Carnegie Mellon has no freely licensed vector wordmark, so the education tile uses a
+typographic "CMU" in their cardinal red rather than a poor reproduction. To use the real
+mark, download the official SVG from CMU's brand portal, save it as
+`public/logos/cmu.svg`, and add `logo: "/logos/cmu.svg"` to `profile.studyingAt` and to
+the Carnegie Mellon entry in `education`.
 
 ## Logos
 

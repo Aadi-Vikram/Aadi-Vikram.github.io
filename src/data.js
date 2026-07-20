@@ -17,17 +17,17 @@ export const profile = {
 
   // Hero headline
   thesis: {
-    line1: "Systems that scale.",
-    line2: "Models that learn.",
+    line1: "Engineering systems that scale.",
+    line2: "Designing models that learn.",
   },
 
   now: "Wrapping up my SDE internship on Amazon RDS at AWS this August.",
 
   // Large opening line, then the supporting paragraph beneath it.
-  lead: "I like the problems that only show up at scale.",
+  lead: "I'm Aaditya. I like the problems that only show up at scale.",
 
   intro:
-    "At AWS I automate the certificate infrastructure behind Amazon RDS, the kind of work where one missed edge case blocks a region launch. At CMU I took a recommendation service from 200 to 5,000 sustained requests per second over a terabyte of data, and wrote a deep learning library from the autograd up so nothing about training stayed a black box. Before that: telemetry middleware at Cisco serving 10K+ customers, and payloads 40% smaller at Zscaler. I graduate this December and I am looking for a role where systems work and machine learning meet.",
+    "That's been most of my work so far. At AWS I'm on the certificate pipeline behind Amazon RDS, where one missed edge case holds up a whole region launch. At CMU I took a recommendation service from 200 to 5,000 sustained requests per second, then wrote a deep learning library from the autograd up because I didn't want training to stay a black box. Cisco and Zscaler before that, and three published papers with a Best Paper award along the way. I graduate in December and I'm looking for a team where systems work and machine learning sit in the same job.",
 
   // Fills the panel under the hero chart. Recruiters scan this first.
   glance: [
@@ -35,6 +35,13 @@ export const profile = {
     { k: "Available", v: "January 2027" },
     { k: "Focus", v: "Backend, distributed systems, ML infrastructure" },
   ],
+
+  studyingAt: {
+    name: "Carnegie Mellon University",
+    detail: "M.S. Computational Data Science, GPA 4.00",
+    mark: "CMU",
+    accent: "#C41230",
+  },
 
   shippedAt: [
     { name: "Amazon Web Services", logo: "/logos/aws.svg" },
@@ -285,6 +292,8 @@ export const skills = [
 export const education = [
   {
     school: "Carnegie Mellon University",
+    mark: "CMU",
+    accent: "#C41230",
     degree: "M.S. Computational Data Science (MCDS)",
     grade: "GPA 4.00 / 4.00",
     period: "Expected Dec 2026",
@@ -299,6 +308,7 @@ export const education = [
   },
   {
     school: "PES University",
+    logo: "/logos/pes.png",
     degree: "B.Tech. Computer Science and Engineering",
     grade: "GPA 9.42 / 10.00",
     period: "May 2024",

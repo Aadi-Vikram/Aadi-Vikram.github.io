@@ -19,6 +19,24 @@ export default function Glance() {
       </dl>
 
       <div className="rule mt-5 pt-5">
+        <p className="eyebrow m-0 mb-3.5">Studying at</p>
+        <div className="flex items-center gap-3.5">
+          <span
+            className="logo-tile w-[62px] h-[62px] rounded-2xl grid place-items-center display text-[16px]"
+            style={{ color: profile.studyingAt.accent }}
+          >
+            {profile.studyingAt.mark}
+          </span>
+          <div>
+            <p className="m-0 text-[14px] font-semibold leading-tight">{profile.studyingAt.name}</p>
+            <p className="m-0 mono text-[10.5px] mt-1.5" style={{ color: "var(--faint)" }}>
+              {profile.studyingAt.detail}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="rule mt-5 pt-5">
         <p className="eyebrow m-0 mb-3.5">Shipped at</p>
         <div className="flex items-center gap-3.5">
           {profile.shippedAt.map((c) => (

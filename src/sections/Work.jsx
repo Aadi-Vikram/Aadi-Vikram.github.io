@@ -105,22 +105,38 @@ export default function Work() {
       {/* Education */}
       <div className="rule pt-9 mt-2 grid sm:grid-cols-2 gap-4">
         {education.map((e) => (
-          <div key={e.school} className="card rounded-lg p-5">
-            <div className="flex items-baseline justify-between gap-3">
-              <h3 className="text-[16.5px] font-semibold m-0">{e.school}</h3>
-              <span className="mono text-[10.5px] shrink-0" style={{ color: "var(--faint)" }}>
-                {e.period}
-              </span>
+          <div key={e.school} className="card rounded-xl p-6">
+            <div className="flex items-start gap-4">
+              {e.logo ? (
+                <span className="logo-tile w-[54px] h-[54px] shrink-0 rounded-xl overflow-hidden">
+                  <img src={e.logo} alt={`${e.school} logo`} loading="lazy" />
+                </span>
+              ) : (
+                <span
+                  className="logo-tile w-[54px] h-[54px] shrink-0 rounded-xl grid place-items-center display text-[14px]"
+                  style={{ color: e.accent }}
+                >
+                  {e.mark}
+                </span>
+              )}
+              <div className="min-w-0 flex-1">
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="text-[16.5px] font-semibold m-0">{e.school}</h3>
+                  <span className="mono text-[10.5px] shrink-0" style={{ color: "var(--faint)" }}>
+                    {e.period}
+                  </span>
+                </div>
+                <p className="text-[14.5px] m-0 mt-1.5" style={{ color: "var(--muted)" }}>
+                  {e.degree}
+                </p>
+                <p className="mono text-[11px] m-0 mt-1.5" style={{ color: "var(--accent)" }}>
+                  {e.grade}
+                </p>
+                <p className="text-[12.5px] leading-relaxed m-0 mt-3" style={{ color: "var(--faint)" }}>
+                  {e.courses.join(" · ")}
+                </p>
+              </div>
             </div>
-            <p className="text-[14.5px] m-0 mt-1" style={{ color: "var(--muted)" }}>
-              {e.degree}
-            </p>
-            <p className="mono text-[11px] m-0 mt-1.5" style={{ color: "var(--accent)" }}>
-              {e.grade}
-            </p>
-            <p className="text-[12.5px] leading-relaxed m-0 mt-3" style={{ color: "var(--faint)" }}>
-              {e.courses.join(" · ")}
-            </p>
           </div>
         ))}
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowUpRight, Plus, Minus } from "lucide-react";
+import { ArrowUpRight, Plus, Minus, ChevronDown } from "lucide-react";
 import { projects } from "../data";
 import SectionHead from "./SectionHead";
 import { useReveal } from "../useReveal";
@@ -113,8 +113,13 @@ function Card({ p, flagship }) {
   );
 }
 
+const SHOWN = 2; // alongside the flagship, so three are visible at first
+
 export default function Projects() {
+  const [showAll, setShowAll] = useState(false);
   const [flagship, ...rest] = projects;
+  const visible = showAll ? rest : rest.slice(0, SHOWN);
+  const hidden = rest.length - SHOWN;
 
   return (
     <section id="projects" className="shell py-16 sm:py-20">
@@ -127,11 +132,32 @@ export default function Projects() {
       <div className="grid gap-4">
         <Card p={flagship} flagship />
         <div className="grid md:grid-cols-2 gap-4">
-          {rest.map((p) => (
+          {visible.map((p) => (
             <Card key={p.name} p={p} />
           ))}
         </div>
       </div>
+
+      {hidden > 0 && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowAll((v) => !v)}
+            aria-expanded={showAll}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-[14px] font-medium transition-colors"
+            style={{ border: "1px solid var(--line)", background: "var(--surface)", color: "var(--ink)" }}
+          >
+            {showAll ? "Show fewer" : `Show ${hidden} more project${hidden > 1 ? "s" : ""}`}
+            <ChevronDown
+              size={15}
+              strokeWidth={2.5}
+              style={{
+                transform: showAll ? "rotate(180deg)" : "none",
+                transition: "transform 0.25s ease",
+              }}
+            />
+          </button>
+        </div>
+      )}
     </section>
   );
 }
