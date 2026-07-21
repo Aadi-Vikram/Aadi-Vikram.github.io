@@ -86,13 +86,13 @@ export const experience = [
     place: "Seattle, WA",
     current: true,
     summary:
-      "Extended the RDS public key infrastructure so new AWS regions can launch with modern certificate algorithms on day one.",
+      "Built the RDS control-plane workflow that propagates regional CA certificates to new AWS regions, so database instances there accept TLS-authenticated connections from day one.",
     bullets: [
-      "Expanded launch-time certificate support from 1 to 3 algorithms across 3 upcoming AWS regions by extending RDS PKI automation to RSA-4096 and ECC-384.",
-      "Cut regional certificate publication from weeks to days with 2 AWS Lambda functions plus AWS CDK and IAM infrastructure that automate a multi-step public trust-store workflow.",
-      "Automated internal trust-store onboarding for new regions: secure network connectivity, retrieval of newly issued certificates, and generated code reviews for certificate repository updates.",
+      "Engineered an idempotent Java control-plane workflow that integrates and propagates RSA-2048, RSA-4096 and ECC-384 regional CA certificates across 3 upcoming AWS regions, enabling TLS-authenticated connectivity to RDS database instances.",
+      "Built 2 AWS Lambda functions and extended AWS CDK and IAM infrastructure to move certificate artifacts securely from a tooling-account S3 bucket to a global publication account, cutting public trust-store publication from weeks to days.",
+      "Automated internal trust-store onboarding across 2 repositories, 4 branches and 12 configuration files by retrieving regional certificates, generating code reviews, and wiring failure ticketing into region-build automation.",
     ],
-    stack: ["Java", "AWS Lambda", "AWS CDK", "IAM", "PKI"],
+    stack: ["Java", "AWS Lambda", "AWS CDK", "IAM", "Amazon S3", "TLS / PKI"],
   },
   {
     company: "Cisco",
