@@ -88,9 +88,9 @@ export const experience = [
     summary:
       "Built the RDS control-plane workflow that propagates regional CA certificates to new AWS regions, so database instances there accept TLS-authenticated connections from day one.",
     bullets: [
-      "Engineered an idempotent Java control-plane workflow that integrates and propagates RSA-2048, RSA-4096 and ECC-384 regional CA certificates across 3 upcoming AWS regions, enabling TLS-authenticated connectivity to RDS database instances.",
-      "Built 2 AWS Lambda functions and extended AWS CDK and IAM infrastructure to move certificate artifacts securely from a tooling-account S3 bucket to a global publication account, cutting public trust-store publication from weeks to days.",
-      "Automated internal trust-store onboarding across 2 repositories, 4 branches and 12 configuration files by retrieving regional certificates, generating code reviews, and wiring failure ticketing into region-build automation.",
+      "Engineered an idempotent Java control-plane workflow that propagates RSA-2048, RSA-4096 and ECC-384 regional CA certificates across 3 upcoming AWS regions, enabling TLS-authenticated connections to RDS instances.",
+      "Built 2 AWS Lambda functions and extended AWS CDK and IAM infrastructure to move certificate artifacts from a tooling-account S3 bucket to a global publication account, cutting trust-store publication from weeks to days.",
+      "Automated internal trust-store onboarding across 2 repositories, 4 branches and 12 configuration files by retrieving regional certificates, generating code reviews, and integrating failure ticketing into region-build automation.",
     ],
     stack: ["Java", "AWS Lambda", "AWS CDK", "IAM", "Amazon S3", "TLS / PKI"],
   },
@@ -104,11 +104,11 @@ export const experience = [
     period: "Sep 2024 – Jul 2025",
     place: "Chennai, India",
     summary:
-      "Owned telemetry middleware for a network management platform used by enterprise customers worldwide.",
+      "Owned SMO, a Go service that polls telemetry from customer devices across 10K+ enterprise deployments, and fixed the data-loss bug hiding inside it.",
     bullets: [
-      "Led development of a Go-based telemetry middleware serving 10K+ customers, validating pipelines through AWS Athena.",
-      "Built Webex bots in Node.js for real-time threshold and system-metric alerts, reducing mean time to resolution by 40%.",
-      "Improved platform reliability by 35% by resolving 50+ issues and standardizing error handling across 20+ microservices.",
+      "Eliminated fleet-wide telemetry gaps: a new backup and restore feature left devices briefly unreachable, and the fixed 24-hour poll silently dropped a full day of data per miss. Rebuilt it with per-device checkpoints that persist the last successful poll timestamp and request the whole gap on recovery, so any outage backfills itself. Coverage validated in AWS Athena.",
+      "Built Webex bots in Node.js delivering real-time threshold and system-health alerts to on-call engineers, cutting mean time to resolution by roughly 40%.",
+      "Led error-contract standardization across 8 engineering teams whose microservices fed SMO, replacing inconsistent response formats that surfaced unreadable errors to customers with one agreed schema, then reworked the backend to extract user-facing messages from it.",
     ],
     stack: ["Go", "Node.js", "AWS Athena", "Microservices", "Kubernetes"],
   },
@@ -119,7 +119,7 @@ export const experience = [
     accent: "#0084C6",
     team: "Cloud Security",
     role: "Software Development Engineer Intern",
-    period: "Jun 2023 – Aug 2023 · Feb 2024 – Aug 2024",
+    period: "Feb 2024 – Aug 2024",
     place: "Bangalore, India",
     summary:
       "Two internships on the data path: serialization, storage, and message transport for a security cloud.",
@@ -175,13 +175,14 @@ export const projects = [
     org: "Carnegie Mellon · Intro to Deep Learning (PhD)",
     period: "Aug 2025 – Dec 2025",
     img: "/deep-learning.png",
-    headline: "A deep learning library written from scratch",
+    headline: "Autograd from scratch, verified to 1e-5",
     summary:
-      "PyTorch-style autograd, forward and backward propagation, and a model zoo built up from NumPy primitives.",
+      "Reverse-mode autograd over a modular computation graph, with analytical gradients checked against numerical references to within 1e-5.",
     detail:
-      "Implemented a PyTorch-like deep learning library from first principles: forward and backward propagation, autograd-style training loops, optimizers, and loss functions. On top of the core, built and validated MLPs, CNNs, RNNs including GRU and LSTM cells, and Transformers, each checked against reference gradients. The project made every abstraction the framework normally hides explicit.",
+      "Implemented a PyTorch-style deep learning library from first principles: reverse-mode autograd over a modular computation graph, forward and backward passes, optimizers, and loss functions. Every analytical gradient was verified against a numerical reference to within 1e-5 before anything was trained on top of it. Then came the models: MLPs, CNNs, RNNs with GRU and LSTM cells, and Transformers. The point was to leave nothing the framework normally hides implicit.",
     stack: ["Python", "NumPy", "Autograd", "CNNs", "Transformers"],
     metrics: [
+      { k: "1e-5", v: "gradient check tolerance" },
       { k: "6", v: "model families" },
       { k: "0", v: "frameworks used" },
     ],
@@ -194,9 +195,9 @@ export const projects = [
     img: "/dehazing.png",
     headline: "Best Paper Award, ISMSI 2024",
     summary:
-      "A Tiramisu generator and PatchGAN discriminator that removes wavelength-dependent haze without estimating transmission maps.",
+      "Every state-of-the-art dehazing model failed on multispectral data because they all assume haze is uniform across wavelengths. It is not.",
     detail:
-      "Existing dehazing methods assume RGB imagery and break down on multispectral data, where haze behaves differently in each band. This framework decomposes channels and processes each band individually, uses a modified Tiramisu generator with dense connectivity and skip connections to keep both fine texture and semantic structure, and adds a PatchGAN discriminator to preserve local detail. Trained with adversarial, L1, and perceptual losses, it beat state-of-the-art baselines on the SHIA dataset in both PSNR and SSIM, which matters for agriculture, environmental monitoring, and remote sensing.",
+      "After implementing several state-of-the-art dehazing models and watching all of them produce poor results on multispectral data, the cause turned out to be a shared assumption: that haze is uniform across the spectrum. It is not. This framework decomposes the channels and processes each band individually, using a modified Tiramisu generator with dense connectivity and skip connections to keep both fine texture and semantic structure, plus a PatchGAN discriminator to preserve local detail. Trained with adversarial, L1 and perceptual losses, it beat the baselines on the SHIA dataset in both PSNR and SSIM. The practical payoff is NDVI accuracy: cleaner multispectral imagery means better crop-health assessment, and the same applies to environmental monitoring and remote sensing.",
     stack: ["TensorFlow", "Python", "GANs", "SHIA dataset"],
     metrics: [
       { k: "🏆", v: "Best Paper, ISMSI 2024" },
@@ -206,20 +207,20 @@ export const projects = [
     linkLabel: "Read the paper",
   },
   {
-    name: "Yet Another Kafka",
+    name: "Distributed Messaging and Stream Processing",
     tag: "Distributed Systems",
     org: "PES University",
     period: "Nov 2022 – Jan 2023",
     img: "/kafka.png",
-    headline: "A message broker built on raw sockets",
+    headline: "From a hand-built broker to real stream processing",
     summary:
-      "Producer–consumer messaging with multi-broker replication and ZooKeeper-backed recovery.",
+      "A Kafka-like broker written over raw sockets, later extended into a Samza stream-processing pipeline on Amazon EMR.",
     detail:
-      "Built a Kafka-like distributed messaging system from socket programming up: a producer–consumer architecture with JSON serialization and topic management. Data is replicated across multiple brokers for fault tolerance, and ZooKeeper handles leader election, synchronization, and metadata so the cluster recovers cleanly when a broker drops. Clients subscribe to topics and keep receiving through failover.",
-    stack: ["Python", "Sockets", "ZooKeeper", "Replication"],
+      "Built a Kafka-like distributed messaging system from socket programming up: a producer–consumer architecture with JSON serialization and topic management, replicated across multiple brokers for fault tolerance, with ZooKeeper handling leader election, synchronization and metadata so the cluster recovers cleanly when a broker drops. Later extended into stream processing proper: a Java Kafka producer routing a ride-hailing event trace into two topics partitioned five ways by block ID, feeding stateful Samza jobs that hold per-block driver state in a key-value store and match each rider to a driver by a four-factor weighted score over distance, rating, salary and gender preference.",
+    stack: ["Java", "Python", "Sockets", "ZooKeeper", "Apache Samza", "Amazon EMR"],
     metrics: [
       { k: "N-broker", v: "replication" },
-      { k: "Auto", v: "failover recovery" },
+      { k: "5-way", v: "partitioned streams" },
     ],
   },
   {

@@ -113,7 +113,7 @@ function Card({ p, flagship }) {
   );
 }
 
-const SHOWN = 2; // alongside the flagship, so three are visible at first
+const SHOWN = 3; // alongside the flagship, so four are visible at first
 
 export default function Projects() {
   const [showAll, setShowAll] = useState(false);
